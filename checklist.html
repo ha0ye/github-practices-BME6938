@@ -133,7 +133,8 @@
 <ul>
 <li>
 <input type="checkbox" disabled>
-install the Git software</li>
+install the <a href="https://git-scm.com/downloads" class="external-link">Git software</a>
+</li>
 <li>
 <input type="checkbox" disabled>
 install the <a href="https://desktop.github.com/" class="external-link">GitHub Desktop</a> application (optional)</li>
@@ -157,13 +158,39 @@ if you’re a command-line user and NOT comfortable with vim, configure an <a hr
 <h2 class="hasAnchor">
 <a href="#github-setup" class="anchor"></a>GitHub Setup</h2>
 <ul>
+<li><p><input type="checkbox" disabled>
+create a <a href="https://github.com/join" class="external-link">GitHub account</a> <em>use the same email as you configured for git!</em></p></li>
+<li><p><input type="checkbox" disabled>
+claim your <a href="https://education.github.com/pack/join" class="external-link">GitHub Student Developer Pack</a> (or equivalent if you’re not a student)</p></li>
+<li><p><input type="checkbox" disabled>
+Configure an <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" class="external-link">SSH Key</a> for use with GitHub</p></li>
+<li><p><input type="checkbox" disabled><a href="https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/authenticating-to-github" class="external-link">Connect GitHub Desktop with your GitHub account</a> (optional)</p></li>
+</ul>
+</div>
+<div id="workflow-starting-with-local-project" class="section level2">
+<h2 class="hasAnchor">
+<a href="#workflow-starting-with-local-project" class="anchor"></a>Workflow (starting with local project)</h2>
+<ul>
 <li>
 <input type="checkbox" disabled>
-create a <a href="https://github.com/join" class="external-link">GitHub account</a> <em>use the same email as you configured for git!</em>
+Initialize a git repo in the project folder:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">git</span> init</span></code></pre></div>
+<ul>
+<li>
+<input type="checkbox" disabled><a href="https://rogerdudler.github.io/git-guide#add" class="external-link">Make commits for your git</a>
 </li>
 <li>
+<input type="checkbox" disabled><a href="https://github.com/new" class="external-link">Create a GitHub repo</a> without any initialized files.</li>
+<li>
 <input type="checkbox" disabled>
-claim your <a href="https://education.github.com/pack/join" class="external-link">GitHub Student Developer Pack</a> (or equivalent if you’re not a student)</li>
+Connect your local git repo to GitHub</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">git</span> remote add origin <span class="op">&lt;</span>server<span class="op">&gt;</span></span></code></pre></div>
+<ul>
+<li>
+<input type="checkbox" disabled><a href="https://rogerdudler.github.io/git-guide/#push" class="external-link">Push local commits to GitHub</a>
+</li>
 </ul>
 </div>
 </div>
