@@ -15,10 +15,10 @@ knitr::opts_chunk$set(
 
 ```{r, include = FALSE}
 
-lesson_title <- "Best Practices for Using Github to do Data Science"
-lesson_description <- "Data science does not stop once you have completed an analysis and produced a publication or poster. Share your work in a FAIR (findable, accessible, interoperable, reusable) manner is crucial for researchers who wish to have an impact. This lesson reviews the essential concepts of Git and Github, the de facto tools for version control, and their benefits for data science projects.
+lesson_title <- "Using Git and Github for Data Science Projects"
+lesson_description <- "Git and GitHub are widely used tools for software version control, but they can also be highly effective for organizing Data Science Research Projects. This workshop will review essential concepts and commands for using Git and GitHub in a research project setting, including both solo and collaborative workflows.
 
-NO previous experience with git is required."
+NO previous experience with git is required, but familiarity with using Git and GitHub will help learners focus on the conceptual aspects of this lesson."
 lesson_keywords <- c("Open Educational Resources", 
                      "Research Support Skills", 
                      "Version Control", 
@@ -55,7 +55,8 @@ jsonlite::write_json(zenodo_json, ".zenodo.json",
 
 ## Prerequisites
 ```{r, include = FALSE}
-prereqs <- c("are proficient in programming and data analysis")
+prereqs <- c("are proficient in programming and data analysis", 
+             "are familiar with command-line interfaces (e.g. unix shell)")
 prereqs_text <- paste0("* ", prereqs, collapse = "\n")
 desc::desc_set("prerequisites", prereqs_text)
 
@@ -68,8 +69,7 @@ This lesson assumes you:
 ## Learning Outcomes
 
 ```{r, include = FALSE}
-learning_outcomes <- c("explain the benefits of version control for coding projects",
-                       "understand essential features of working in git and github
+learning_outcomes <- c("understand essential features of working in git and github
   - commits as project snapshots
   - branches as ways to experiment
   - remotes and clones

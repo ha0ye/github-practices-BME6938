@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Best Practices for Using Github to do Data Science
+# Using Git and Github for Data Science Projects
 
 <!-- badges: start -->
 
@@ -12,30 +12,30 @@ workflow](https://github.com/uf-repro/lesson-template/workflows/pkgdown/badge.sv
 
 ## Description
 
-Data science does not stop once you have completed an analysis and
-produced a publication or poster. Share your work in a FAIR (findable,
-accessible, interoperable, reusable) manner is crucial for researchers
-who wish to have an impact. This lesson reviews the essential concepts
-of Git and Github, the de facto tools for version control, and their
-benefits for data science projects.
+Git and GitHub are widely used tools for software version control, but
+they can also be highly effective for organizing Data Science Research
+Projects. This workshop will review essential concepts and commands for
+using Git and GitHub in a research project setting, including both solo
+and collaborative workflows.
 
-NO previous experience with git is required.
+NO previous experience with git is required, but familiarity with using
+Git and GitHub will help learners focus on the conceptual aspects of
+this lesson.
 
 ## Prerequisites
 
 This lesson assumes you:
 
-  - are proficient in programming and data analysis
+- are proficient in programming and data analysis
+- are familiar with command-line interfaces (e.g. unix shell)
 
 ## Learning Outcomes
 
 By the end of the workshop, participants will be able to:
 
-  - explain the benefits of version control for coding projects
-  - understand essential features of working in git and github
-      - commits as project snapshots
-      - branches as ways to experiment
-      - merging and resolving merge conflicts
-      - remotes and clones
-      - collaboration workflow
-  - identify resources for further learning
+- understand essential features of working in git and github
+  - commits as project snapshots
+  - branches as ways to experiment
+  - remotes and clones
+  - collaboration workflow
+- identify resources for further learning
