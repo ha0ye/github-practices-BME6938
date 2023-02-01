@@ -19,8 +19,7 @@ using Git and GitHub in a research project setting, including both solo
 and collaborative workflows.
 
 NO previous experience with git is required, but familiarity with using
-Git and GitHub will help learners focus on the conceptual aspects of
-this lesson.
+Git and GitHub will be very helpful!
 
 ## Prerequisites
 
@@ -28,6 +27,8 @@ This lesson assumes you:
 
 - are proficient in programming and data analysis
 - are familiar with command-line interfaces (e.g. unix shell)
+- have a GitHub account
+- have Git installed and set up on your personal computer
 
 ## Learning Outcomes
 

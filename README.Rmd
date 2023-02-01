@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 lesson_title <- "Using Git and Github for Data Science Projects"
 lesson_description <- "Git and GitHub are widely used tools for software version control, but they can also be highly effective for organizing Data Science Research Projects. This workshop will review essential concepts and commands for using Git and GitHub in a research project setting, including both solo and collaborative workflows.
 
-NO previous experience with git is required, but familiarity with using Git and GitHub will help learners focus on the conceptual aspects of this lesson."
+NO previous experience with git is required, but familiarity with using Git and GitHub will be very helpful!"
 lesson_keywords <- c("Open Educational Resources", 
                      "Research Support Skills", 
                      "Version Control", 
@@ -56,7 +56,9 @@ jsonlite::write_json(zenodo_json, ".zenodo.json",
 ## Prerequisites
 ```{r, include = FALSE}
 prereqs <- c("are proficient in programming and data analysis", 
-             "are familiar with command-line interfaces (e.g. unix shell)")
+             "are familiar with command-line interfaces (e.g. unix shell)", 
+             "have a GitHub account", 
+             "have Git installed and set up on your personal computer")
 prereqs_text <- paste0("* ", prereqs, collapse = "\n")
 desc::desc_set("prerequisites", prereqs_text)
 
