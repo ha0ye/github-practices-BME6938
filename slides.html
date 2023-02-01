@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Best Practices for Using Github to do Data Science</title>
+    <title>Using Git and Github for Data Science Projects</title>
     <meta charset="utf-8" />
     <meta name="author" content="Hao Ye" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -14,10 +15,10 @@
 
 class: inverse, center, middle
 
-# Best Practices for Using Github to do Data Science
+# Using Git and Github for Data Science Projects
 ### Hao Ye
-### Health Science Center Libraries
-### (updated: 2021-04-16)
+### Academic Research Consulting &amp; Services, University of Florida
+### (updated: 2023-02-01)
 
 ---
 You have a published data analysis.
@@ -42,28 +43,22 @@ What happens next?
 
 This lesson assumes you:
 * are proficient in programming and data analysis
+* are familiar with command-line interfaces (e.g. unix shell)
+* have a GitHub account
+* have Git installed and set up on your personal computer
 
 --
 
-**NO** previous experience with Git or GitHub is required!
+**NO** previous experience with git is required, but familiarity with using Git and GitHub will be very helpful!
 
 ---
 # Learning Objectives
 
-1 hour is insufficient to teach you how to use Git and GitHub in a data analysis workflow.
-
---
-
-1 hour **is** sufficient to explain why Git and GitHub are useful in a data analysis workflow.
-
----
 This lesson teaches you to:
 
-* explain the benefits of version control for coding projects
 * understand essential features of working in git and github
  - commits as project snapshots
  - branches as ways to experiment
- - merging and resolving merge conflicts
  - remotes and clones
  - collaboration workflow
 * identify resources for further learning
@@ -75,7 +70,6 @@ class: inverse, center, middle
 # Basic Concepts
 
 ---
-
 # Version Control
 
 **Version Control**: tools/systems to manage changes to files
@@ -87,10 +81,9 @@ class: inverse, center, middle
 * Dropbox / Google Drive can revert versions
 
 ---
-
 # Why Learn Git &amp; GitHub
 
-Git &amp; GitHub are version control for **projects**.
+Git &amp; GitHub are version control tools for **projects**.
 
 You can:
 * restore project states involving changes to multiple files.
@@ -99,7 +92,6 @@ You can:
 * manage work from large distributed teams
 
 ---
-
 # Example scenarios
 
 * You change a histogram to a bar plot, and then you want to change it back.
@@ -107,51 +99,30 @@ You can:
 * You want to experiment with a different dataset / analysis / narrative without duplicating everything.
 
 ---
+# Getting Started with Git
 
-# Git and GitHub
-
---
-
-## (not the same thing!)
-
----
-
-# Git
-
-* **Git** is the name of the software and the associated version control system
-* notoriously unfriendly
-  - unintuitive command names
-  - obscure error messages
-
----
-
-# GitHub
-
-* a cloud platform that hosts Git repos
-* unlimited *public* and *private* repos
-* size limits:
-  - 1 GB for each repo
-  - 100 MB for individual files
-* [GitHub Education](https://education.github.com/pack) has some benefits
-  - one code for a free t-shirt from https://github.myshopify.com/ to be given away to a random attendee
-  
----
-
-class: inverse, center, middle
-
-# Git tracks versions for **projects**
-
----
-# Basic Mechanics
-
-* Versioning occurs on the level of a projects:
+* Git versioning occurs on the level of a projects:
   - A project folder is a **repository** or **repo**, for short.
+  
+* To start version control for a project folder, use the shell to navigate into the folder and run the command:
+
+```
+git init
+```
+
+* This creates the `.git` folder to track the contents of the folder and subfolders.
+
+---
+class: center, middle
+
+# DEMO
+
+---
+# Making Commits
+
 * Changes are recorded by taking a snapshot of the folder:
   - each snapshot is called a **commit**.
-
----
-
-![A screenshot of the website https://github.com/uf-repro/friendly-github-intro/commits/main, showing the commit log for the repo of the Friendly Github Intro lesson. Each commit entry has an associated date and time, the author, and the summary of the commit message.](commits_example.png)
+* Commits only track the changes from the previous commit (this saves disk space).
 
 ---
 # Commit Structure
@@ -172,19 +143,24 @@ class: inverse, center, middle
 # Constructing a Commit
 
 * each commit is created *manually*
-  - `add` files with changes (including new files)
-  - `commit` and write the commit message
+  - `git add` files with changes (including new files)
+  - `git commit` and write the commit message
 
 --
 * Why so tedious?
   - this procedure gives you control over which changes are recorded in each commit
 
 ---
+class: center, middle
+
+# DEMO
+
+---
 
 # Navigating Commits
 
 * Git generates a unique **hash** for each commit
-* You can view the project state by using the `checkout` command and the desired hash
+* You can view the project state by using the `git checkout` command and the desired hash
 * The file/folder contents will change to reflect the project state for that commit.
 
 --
@@ -192,48 +168,9 @@ class: inverse, center, middle
 *In Git, files and folders are mutable; nothing is safe unless it is in a **commit**.*
 
 ---
+class: center, middle
 
-class: inverse, center, middle
-
-# Branches Let You Experiment
-
----
-
-For simple projects, your commits might proceed in a linear fashion:
-  - each commit is an incremental step forward
-    (commits track only changes from the previous commit)
-
-But you might be working on different aspects of your project at the same time!
-
---
-
-**branches** allow you to label and save work that may or may not end up in a final version to be published.
-
----
-
-&lt;img src="git-branch.svg" title="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." alt="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." width="80%" /&gt;
-
-.small[[img: https://www.atlassian.com/git/tutorials/using-branches]]
-
-* different branches are separate paths, and in different colors
-* each point on a branch is a commit
-
----
-
-# Merges
-
-A `merge` combines changes from separate branches together into a new commit.
-
---
-
-* If the changes are in separate files or separate sections of a common file, merging is automatic.
-
-* Otherwise, a **merge conflict** occurs, and you need to manually reconcile the differences for the merge commit.
-
----
-# Example Merge Conflict
-
-&lt;img src="merge-conflict.png" title="A screenshot of BBedit showing the merge conflict. Line 6 is '&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;' followed by a hash, indicating the end of the second version." alt="A screenshot of BBedit showing the merge conflict. Line 6 is '&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;' followed by a hash, indicating the end of the second version."  /&gt;
+# DEMO
 
 ---
 class: inverse, center, middle
@@ -258,40 +195,86 @@ Git stores all of the information about the commit history, etc. inside a hidden
 ---
 # GitHub
 
-GitHub acts as a cloud platform to store remotes.
+GitHub is a cloud platform that can store remotes.
 
-Workflow:
-1. Create an empty GitHub repository to be the remote location for a project
-2. Add the address for the new, empty repo on GitHub as a remote, usually called "origin".
-3. `push` will send all new commits on the current branch to the default remote ("origin")
-4. `pull` will retrieve new commits from the remote.
+There are 2 basic ways to set up a GitHub remote:
 
----
-# Restoring from GitHub
-
-1. From a GitHub repository, obtain the address.
-2. `clone` will create a local copy of the repository, and automatically include its source as the remote named "origin".
-
---
-
-In a public GitHub repo, anyone can obtain the files along with the whole history of the project in its commits.
+1. Create an empty GitHub repository to be the remote location for a project. Clone this to your computer to start a new project.
+2. Create an empty GitHub repository to be the remote location for a project. Add the location as a remote for an existing repository.
 
 ---
+# Synchronizing Remotes
 
+When you have commits in one location that need to be synchronized to another location, there are 2 commands to use on a local repository:
+1. `git push` will send all new commits on the current branch to the default remote ("origin")
+1. `git pull` will retrieve new commits from the remote.
+
+---
+class: center, middle
+
+# DEMO
+
+---
 class: inverse, center, middle
 
-# GitHub as a Collaboration Platform
+# Branches Let You Experiment
 
 ---
-# Visibility
 
-**Public** repos are visible to everyone.
+For simple projects, your commits might proceed in a linear fashion:
+  - each commit is an incremental step forward
+    (commits track only changes from the previous commit)
 
-**Private** repos are visible only to collaborators.
+But you might be working on different aspects of your project at the same time!
 
 --
 
-You can toggle a repo between **public** and **private** as needed.
+**branches** allow you to label and save work that may or may not end up in a final version to be published.
+
+---
+
+&lt;img src="git-branch.svg" alt="A diagram from https://www.atlassian.com/git/tutorials/using-branches, of a git repo represented in a diagram with commits as circular nodes, with edges between them showing the relationship between commits and their parents. There is a `Master` branch in light blue, a `Little Feature` branch in purple with one commit, and a `Big Feature` branch in green with 3 commits." width="80%" /&gt;
+
+.small[[img: https://www.atlassian.com/git/tutorials/using-branches]]
+
+* different branches are separate paths, and in different colors
+* each point on a branch is a commit
+
+---
+
+# Merges
+
+A `merge` combines changes from separate branches together into a new commit.
+
+(A merge might also combine changes from a remote with local changes.)
+--
+
+* If the changes are in separate files or separate sections of a common file, merging is automatic.
+
+* Otherwise, a **merge conflict** occurs, and you need to manually reconcile the differences for the merge commit.
+
+---
+# Example Merge Conflict
+
+&lt;img src="merge-conflict.png" alt="A screenshot of BBedit showing the merge conflict. Line 6 is '&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD'`' indicating the start of one version of the file. Line 8 is '=======' indicating the end of one version and the beginning of the next. Line 10 shows '&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;' followed by a hash, indicating the end of the second version."  /&gt;
+
+---
+# Resolving Conflicts
+
+To resolve conflicts:
+1. pay attention to the file(s) that have conflicts
+2. modify the conflicting files to be the version you want in the merge commit
+3. add the files and create the merge commit
+
+---
+class: center, middle
+
+# DEMO
+
+---
+class: inverse, center, middle
+
+# Collaborating
 
 ---
 # Sharing Repos
@@ -320,11 +303,52 @@ Two people, A and B, are working together:
 * after merging, unneeded branches can be deleted
 
 ---
+class: center, middle
+
+# DEMO
+
+---
+class: inverse, center, middle
+
+# Working on HiPerGator
+
+---
+# Recommended Practices
+
+* set up SSH key for authentication
+* do development elsewhere
+  - only run working code on HiPerGator
+  - make it easy to toggle between a test dataset and an actual dataset
+
+---
+# SSH Key Setup
+
+An SSH key lets you authenticate to GitHub without having to use your password each time.
+
+Create a new SSH key on HiPerGator - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent 
+
+Add a new SSH key to your GitHub account - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+
+---
+# General Workflow
+
+1. Do your development
+2. Push a working version to GitHub
+3. Clone to HiPerGator or Pull changes to HiPerGator
+4. Run your code
+5. Commit results OR download the results from HiPerGator
+
+---
+class: center, middle
+
+# DEMO
+
+---
 # Takeaway Messages
 
-* **commits** are project states
-* **branches** are alternate timelines
-* **GitHub** is a cloud platform for backups and collaboration
+* It takes time and practice to get used to Git and GitHub!
+* Getting started now will help you develop habits for later (when you may be part of a dedicated team or have larger projects).
+* Don't be afraid to ask for help or look for workflow helpers (e.g. shell auto-completion)
 
 ---
 # Thanks
@@ -380,6 +404,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
