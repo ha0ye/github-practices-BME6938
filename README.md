@@ -28,7 +28,7 @@ This lesson assumes you:
 - are proficient in programming and data analysis
 - are familiar with command-line interfaces (e.g. unix shell)
 - have a GitHub account
-- have Git installed and set up on your personal computer
+- have Git set up on your personal computer
 
 ## Learning Outcomes
 
@@ -38,5 +38,4 @@ By the end of the workshop, participants will be able to:
   - commits as project snapshots
   - branches as ways to experiment
   - remotes and clones
-  - collaboration workflow
-- identify resources for further learning
+  - an effective workflow for collaboration

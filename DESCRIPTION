@@ -28,10 +28,9 @@ learningOutcomes: * understand essential features of working in git and github
   - commits as project snapshots
   - branches as ways to experiment
   - remotes and clones
-  - collaboration workflow
- * identify resources for further learning
+  - an effective workflow for collaboration
 prerequisites: * are proficient in programming and data analysis
  * are familiar with command-line interfaces (e.g. unix shell)
  * have a GitHub account
- * have Git installed and set up on your personal computer
+ * have Git set up on your personal computer
 priorCourse: 

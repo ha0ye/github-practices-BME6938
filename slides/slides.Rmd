@@ -68,7 +68,7 @@ What happens next?
 * How does someone contribute to the project?
 
 ---
-# Preliminaties
+# Preliminaries
 
 This lesson assumes you:
 `r gsub("\n ", "\n", desc::desc_get("prerequisites"))`
@@ -93,7 +93,7 @@ class: inverse, center, middle
 ---
 # Version Control
 
-**Version Control**: tools/systems to manage changes to files
+**Version Control** – tools/systems to manage changes to files
 
 --
 ## You are probably already using version control!
@@ -125,11 +125,7 @@ You can:
 * Git versioning occurs on the level of a projects:
   - A project folder is a **repository** or **repo**, for short.
   
-* To start version control for a project folder, use the shell to navigate into the folder and run the command:
-
-```
-git init
-```
+* To start version control for a project folder, use the shell to navigate into the folder and run the command `git init`
 
 * This creates the `.git` folder to track the contents of the folder and subfolders.
 
@@ -166,12 +162,17 @@ knitr::include_graphics("commits_example.png")
 # Constructing a Commit
 
 * each commit is created *manually*
-  - `git add` files with changes (including new files)
-  - `git commit` and write the commit message
+1. `git add` files with changes (including new files)
+2. `git commit` and write the commit message
+  - `git commit` by itself will open a text editor (you can set which one with `git config`)
+  - `git commit -m "message"` lets you inline a short message
 
---
-* Why so tedious?
-  - this procedure gives you control over which changes are recorded in each commit
+---
+# Why so tedious?
+* The commit procedure is more work than a simple button press!
+* This procedure gives you control over which changes are recorded in each commit
+  - if you make edits in multiple files, you can group the changes into meaningful commits
+* The commit message is important to find correct versions later
 
 ---
 class: center, middle
@@ -183,8 +184,9 @@ class: center, middle
 # Navigating Commits
 
 * Git generates a unique **hash** for each commit
-* You can view the project state by using the `git checkout` command and the desired hash
-* The file/folder contents will change to reflect the project state for that commit.
+* You can recover a past project state by using the `git checkout` command and the desired hash
+  - The file/folder contents will change to reflect the project state for that commit.
+  - Return using `git checkout <branch>`
 
 --
 
@@ -228,7 +230,10 @@ There are 2 basic ways to set up a GitHub remote:
 ---
 # Synchronizing Remotes
 
-When you have commits in one location that need to be synchronized to another location, there are 2 commands to use on a local repository:
+When you have commits to synchronize across remotes, there are 2 commands to use.
+
+These commands are relative to the local repository where they are run from.
+
 1. `git push` will send all new commits on the current branch to the default remote ("origin")
 1. `git pull` will retrieve new commits from the remote.
 
@@ -310,7 +315,7 @@ On GitHub, you can add other accounts as collaborators to give them write access
 
 --
 
-## Example scenario
+### Example scenario
 
 Two people, A and B, are working together:
 * A `commits`, A `pushes` to GitHub.
@@ -371,11 +376,12 @@ class: center, middle
 # DEMO
 
 ---
-# Takeaway Messages
+# Final Tips
 
 * It takes time and practice to get used to Git and GitHub!
 * Getting started now will help you develop habits for later (when you may be part of a dedicated team or have larger projects).
-* Don't be afraid to ask for help or look for workflow helpers (e.g. shell auto-completion)
+* Don't be afraid to ask for help.
+* Look for workflow helpers (e.g. shell auto-completion)
 
 ---
 # Thanks
