@@ -32,6 +32,14 @@
 
 ## Specific How-To Guides
 
+* ["Generating a new SSH key"](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+  - Instructions on creating a new SSH key
+
+* ["Adding a new SSH key to your GitHub account"](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+  - Instructions on adding a new SSH key to your GitHub account
+
+
+
 * ["How to Write a Git Commit Message"](https://chris.beams.io/posts/git-commit/)
   - blogpost from Chris Beams about writing good commit messages
 
