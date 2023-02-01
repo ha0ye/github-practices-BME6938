@@ -38,8 +38,6 @@
 * ["Adding a new SSH key to your GitHub account"](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
   - Instructions on adding a new SSH key to your GitHub account
 
-
-
 * ["How to Write a Git Commit Message"](https://chris.beams.io/posts/git-commit/)
   - blogpost from Chris Beams about writing good commit messages
 
