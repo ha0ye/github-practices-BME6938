@@ -44,3 +44,15 @@
 * ["Understanding the GitHub flow"](https://guides.github.com/introduction/flow/)
   - GitHub documentation for a workflow for collaborative teams using Git branches and GitHub pull requests
 
+## Quality of Life Add-ons
+
+* ["Git branch name in prompt"](https://stackoverflow.com/questions/17811327/git-branch-name-in-prompt)
+  - stack overflow instructions on showing the branch name in shell prompt
+  
+* ["How to configure git bash command line completion?"](https://stackoverflow.com/questions/12399002/how-to-configure-git-bash-command-line-completion)
+  - stack overflow instructions on configuring command line completion for git commands
+
+* ["pretty git branch graphs"](https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs)
+  - stack overflow instructions on setting up aliases for git log displays
+
+
