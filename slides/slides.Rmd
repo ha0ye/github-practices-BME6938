@@ -145,9 +145,9 @@ class: center, middle
 # Commit Structure
 
 * each commit has a **commit message**
-  - 1-line summary
+  - 1-line summary (required)
   - blank line
-  - further details
+  - further details (optional)
 * each commit also records **who** and **when**
 * good commit messages help you find the right past project state!
 
@@ -162,8 +162,9 @@ knitr::include_graphics("commits_example.png")
 # Constructing a Commit
 
 * each commit is created *manually*
-1. `git add` files with changes (including new files)
-2. `git commit` and write the commit message
+1. `git add <file(s)>` to include files with changes (and new files)
+2. `git status` to check what is being included
+3. `git commit` and write the commit message
   - `git commit` by itself will open a text editor (you can set which one with `git config`)
   - `git commit -m "message"` lets you inline a short message
 
@@ -184,9 +185,9 @@ class: center, middle
 # Navigating Commits
 
 * Git generates a unique **hash** for each commit
-* You can recover a past project state by using the `git checkout` command and the desired hash
+* You can recover a past project state by using the `git checkout <hash>` command
   - The file/folder contents will change to reflect the project state for that commit.
-  - Return using `git checkout <branch>`
+  - Return using `git checkout <branch>` (the default branch is usually `main` or `master`)
 
 --
 
@@ -218,14 +219,24 @@ Git stores all of the information about the commit history, etc. inside a hidden
   These are called **remotes**.
 
 ---
-# GitHub
+# GitHub (clone)
 
 GitHub is a cloud platform that can store remotes.
 
 There are 2 basic ways to set up a GitHub remote:
 
 1. Create an empty GitHub repository to be the remote location for a project. Clone this to your computer to start a new project.
+
+` git clone <address>` will clone the repository at `<address>` into the current path and use the same folder name as the project
+
+---
+# GitHub (remote)
+
 2. Create an empty GitHub repository to be the remote location for a project. Add the location as a remote for an existing repository.
+
+* `git remote -v` will list the known remotes and possible actions
+* `git remote add <name> <address>` will add a remote with the corresponding name and address
+  - usually `name` = `origin` and the address is copied from GitHub
 
 ---
 # Synchronizing Remotes
@@ -235,7 +246,8 @@ When you have commits to synchronize across remotes, there are 2 commands to use
 These commands are relative to the local repository where they are run from.
 
 1. `git push` will send all new commits on the current branch to the default remote ("origin")
-1. `git pull` will retrieve new commits from the remote.
+  * the first time you push a new branch, you will get additional instructions
+2. `git pull` will retrieve new commits from the remote.
 
 ---
 class: center, middle
@@ -269,6 +281,17 @@ knitr::include_graphics("git-branch.svg")
 
 * different branches are separate paths, and in different colors
 * each point on a branch is a commit
+
+---
+# Branch Commands
+
+* `git branch -v` will show the available local branches
+* `git checkout -b <branch name>` will create a new branch and switch to it
+
+### Tips
+
+* use `git status` to verify the branch!
+* [customizing your shell prompt](https://stackoverflow.com/questions/17811327/git-branch-name-in-prompt) to show the branch is also useful!
 
 ---
 
