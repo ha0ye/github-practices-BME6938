@@ -30,6 +30,9 @@
 * ["Choose an Open Source License"](https://choosealicense.com/)
   - A guide for selecting an open source license
 
+* ["Git (and GitHub) Cheat Sheet"](https://neuroplausible.com/github)
+  - A cheat sheet for Git
+
 ## Specific How-To Guides
 
 * ["Generating a new SSH key"](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
